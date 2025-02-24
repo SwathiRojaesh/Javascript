@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block vs Inline Elements</title>
+    <style>
+        /* Styling for Block-level Elements */
+        .block {
+            background-color: #ffcccb;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #ff6666;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Styling for Inline Elements */
+        .inline {
+            background-color: #c1e1c1;
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #4CAF50;
+            display: inline-block;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Additional hover effect */
+        .inline:hover {
+            background-color: #a8d5a8;
+            cursor: pointer;
+        }
+
+        /* Block container for better visualization */
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Block-level element -->
+        <div class="block">This is a block-level element (div). It spans the full width and starts on a new line.</div>
+
+        <!-- Inline elements displayed in a row -->
+        <span class="inline">Inline Element 1</span>
+        <span class="inline">Inline Element 2</span>
+        <span class="inline">Inline Element 3</span>
+
+        <!-- Another Block Element -->
+        <p class="block">This is a paragraph (p), another block-level element. It always starts on a new line.</p>
+
+        <!-- Inline elements inside a paragraph -->
+        <p class="block">You can also <span class="inline">use inline elements</span> inside block elements.</p>
+    </div>
+
+</body>
+</html>

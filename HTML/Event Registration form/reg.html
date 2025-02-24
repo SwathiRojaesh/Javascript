@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="icon" type="image/x-icon" href="logo.png ">
+    <style>
+        body{
+            text-align: center;
+        }
+        .form-group{
+            text-align:left;
+            padding: 20px;
+            display: inline-block;
+            background-color:#BFA7C7;
+            color:black;
+            font-weight: bold;
+        }
+        #fname,#email,#age,#gender,#phone,#password{
+            background-color:whitesmoke;
+            
+        }
+        #top{
+            color: #9A1167;
+            display: inline-block;
+            background-color: white;
+            font-weight: bolder;
+        }
+       
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select{
+            width:100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .button-group{
+            display: flex;
+            justify-content: space-between;
+        }
+        .submit-button{
+            width: 48%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .reset-button{
+            width: 48%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .payment-button{
+            width: 48%;
+            padding: 10px;
+            background-color: #9A1167;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+        }
+        .reset-button:hover{
+            background-color: #D1BBD8;
+
+        }
+        .submit-button:hover{
+            background-color: #D1BBD8;
+        }
+        .payment-button:hover{
+            background-color:#D1BBD8 ;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-group">
+    <center>
+    <h1 id="top">Technical Event Registration</h1>
+    </center>
+    <form>
+        <div>
+           
+            <label for="fname">Name</label>
+            <br>
+            <input type="text" id="fname" name="fname" placeholder="Please Enter Your Name...">
+           
+        </div>
+    <br>
+    
+    <div>
+       
+        <label for="email">Email</label>
+        <br>
+        <input type="email" id="email" name="email" placeholder="Please Enter Your Email..">
+        
+    </div>
+    
+    <br>
+    
+
+    <div>
+        
+        <label for="age">Age</label>
+        <br>
+        <select id="age" name="age" required>
+            <option value="" disabled selected> Please Select Your Age </option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+        </select>
+       
+    </div>
+
+    <br>
+    
+    <div>
+        <label for="gender">Gender</label>
+        <br>
+       
+            <input type="radio" id="female" name="gender" value="male" required>
+            <label for="female">Female</label>
+       
+            <input type="radio" id="male" name="gender" value="male"  required>
+            <label for="male">Male</label>
+        
+    </div>
+    <br>
+    
+    <div>
+        <label for="phone">Mobile No </label>
+        <br>
+        <input type="tel" id="phone" name="phone" placeholder="Please Enter Mob No" required>
+
+
+    </div>
+    <br>
+    
+    <div>
+       <label for="password">Password</label>
+<br>
+       <input type="password" id="password" name="password" placeholder="Set Password" required>
+
+    </div>
+    <br>
+    
+    
+
+    <div>
+        <label for="events">Events</label>
+        <br>
+        <select id="events" name="events" required>
+            <option value="" disabled selected>Select Your Events</option>
+            <option value="cyber hackathon">Cyber hackathon</option>
+            <option value="sql war">SQL war</option>
+            <option value="connect tech">Connect The Tech</option>
+            <option value="Mob">Mobile App Development</option>
+
+        </select>
+    </div>
+
+    <br>
+    <br>
+    <div>
+    <label for="image-upload">Upload Image:</label>
+    <br>
+    <input type="file" id="image-upload" name="image-upload" accept="image/*" required>
+    </div>
+    <br>
+
+    <div>
+        <label for="pay">Payment</label>
+        <br>
+        <select id="pay" name="pay" required>
+            <option value="" disabled selected>Select payment Gateway</option>
+            <option value="upi">UPI</option>
+            <option value="credit">Credit Card</option>
+            <option value="debit">Debit card</option>
+        </select>
+        <div class="button-group">
+        <button type="payment" class="payment-button">Pay</button>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <div class="button-group">
+        <button type="reset" class="reset-button">Reset</button>
+        <button type="submit" class="submit-button">Submit</button>
+    </div>
+    </form>
+    </div>
+
+
+</body>
+</html>
