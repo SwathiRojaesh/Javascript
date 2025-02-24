@@ -1,0 +1,115 @@
+<h1>Guess The Number</h1>
+<input id="guessnumber">
+<button onclick="check()">check</button>
+<p id="result">You Are Wrong/Right</p>
+<p id="score">Score:10 </p>
+
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background:white;
+        color:#721111;
+        text-align:center;
+        padding-top: 50px;
+        margin:10%;
+        outline: auto;
+    }
+
+    h1{
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+    }
+
+    input{
+        padding: 10px 20px;
+        font-size: 2rem;
+        border:blue;
+        background-color:white;
+        border-radius: 8px;
+        outline:auto;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    button{
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        background-color:rgb(7, 7, 53);
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+    }
+
+    button:hover{
+        background-color: #e84118;
+
+    }
+
+    #result{
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    #score{
+        font-size: 50px;
+        color: #f00000;
+        font-weight: bold;
+        margin-top: 15px;
+        padding: 10px;
+        background: rgba(49, 25, 25, 0.3);
+        border-radius: 8px;
+        display: inline-block;
+        outline: auto;
+    }
+
+    .game-container{
+        max-width:600px;
+        margin: auto;
+        background:rgba(0,0,0,0.3);
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow:4px 4px 10px rgba(0,0,0,0.5);
+    }
+
+    @media(max-width : 600px){
+        h1{
+            font-size: 1rem;
+        }
+
+        input, button{
+            font-size: 1.2rem;
+        }
+        #result, #score{
+            font-size: 1.2rem;
+        }
+    }
+
+</style>
+
+
+<script>
+    var guessnumber = document.getElementById("guessnumber")
+    var result=document.getElementById("result")
+    var randomNumber=Math.floor(Math.random()*10)+1
+    var totalscore=10
+
+    function check()
+    {
+       var enterednumber = guessnumber.value 
+       if(randomNumber==enterednumber)
+       {
+        console.log("Right")
+        result.textContent="Right"
+        alert("YOU WON....")
+       }
+       else{
+        totalscore=totalscore-1
+        score.textContent="Score"+totalscore
+        result.textContent="wrong"
+       }
+    }
+</script>

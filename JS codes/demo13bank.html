@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+        <h1 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            Bank Management System for Customer Data
+        </h1>
+    </center>
+    <center>
+    <table border="2" id="transaction_table" style="background-color: thistle;">
+        <thead>
+            <tr>
+                <th>Customer Account Number</th>
+                <th>Transaction Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="transaction_body"></tbody>
+    </table>
+    <br>
+    <button id="deposit">DEPOSIT</button>
+    <table id="deposit-form" style="background-color: aliceblue; display: none;" border="2">
+        <tr>
+            <td><label for="acc-no">Account Number</label></td>
+            <td><input type="number" id="acc-no"></td></tr>
+            <tr><td><label for="deposit-type">Transaction-Type</label></td>
+            <td><input type="Text" id="deposit-type"></td></tr>
+            <tr><td><label for="dep-amount">Amount</label></td>
+            <td><input type="number" id="dep-amount"></td></tr>
+    </table>
+    <br>
+    <button id="withdrawal">WITHDRAWAL</button>
+    <table id="withdrawl-form" style="background-color: aliceblue; display: none;" border="2">
+        <tr>
+            <td><label for="with-acc-no">Account Number</label></td>
+            <td><input type="number" id="with-acc-no"></td></tr>
+            <tr><td><label for="with-type">Transaction-Type</label></td>
+            <td><input type="Text" id="with-type"></td></tr>
+            <tr><td><label for="with-amount">Amount</label></td>
+            <td><input type="number" id="with-amount"></td></tr>
+    </table>
+    <br><br>
+    <button id="saving">Save Transaction Details</button>
+    </center>
+
+    <script>
+        var transactionTable = document.getElementById("transaction_table");
+        var transactionBody = document.getElementById("transaction_body");
+        var depositbtn = document.getElementById("deposit");
+        var withbtn = document.getElementById("withdrawal");
+        var depositForm = document.getElementById("deposit-form");
+        var withdrawlForm = document.getElementById("withdrawl-form");
+
+        var savebtn = document.getElementById("saving");
+
+        depositbtn.addEventListener("click", function(){
+            depositForm.style.display = "block";
+            withdrawlForm.style.display = "none";
+        });
+
+        withbtn.addEventListener("click", function(){
+            withdrawlForm.style.display = "block";
+            depositForm.style.display = "none";
+        });
+
+        savebtn.addEventListener("click", function(){
+            var accno, transactionType, amount;
+
+            if (depositForm.style.display === "block") {
+                accno = document.getElementById("acc-no").value.trim();
+                transactionType = document.getElementById("deposit-type").value.trim();
+                amount = document.getElementById("dep-amount").value.trim();
+            } else if (withdrawlForm.style.display === "block") {
+                accno = document.getElementById("with-acc-no").value.trim();
+                transactionType = document.getElementById("with-type").value.trim();
+                amount = document.getElementById("with-amount").value.trim();
+            }
+
+            if (accno === "" || transactionType === "" || amount === "") {
+                alert("Please fill in all fields");
+                return;
+            }
+
+            var row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${accno}</td>
+                <td>${transactionType}</td>
+                <td>${amount}</td>
+            `;
+            transactionBody.appendChild(row);
+
+            if (depositForm.style.display === "block") {
+                document.getElementById("acc-no").value = '';
+                document.getElementById("deposit-type").value = '';
+                document.getElementById("dep-amount").value = '';
+                depositForm.style.display = "none";
+            } else if (withdrawlForm.style.display === "block") {
+                document.getElementById("with-acc-no").value = '';
+                document.getElementById("with-type").value = '';
+                document.getElementById("with-amount").value = '';
+                withdrawlForm.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
